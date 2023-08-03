@@ -1,0 +1,52 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /visitormanagement
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dt-visitordb?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=true&useUnicode=yes&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password:
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+  mail:
+    host: localhost
+    port: 1025
+    username: hamzaEzzakri
+    password: visitormanagement
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: '*'
+          starttls:
+            enable: true
+          auth: true
+
+app:
+  email: hamzaezzakri98@gmail.com
+  personal: Marjane Holding
+
+api:
+  url: http://localhost:8888/visitormanagement
+
+rendez-vous:
+  heuresProposees:
+    - '08:00'
+    - '09:00'
+    - '10:00'
+    - '11:00'
+    - '12:00'
+    - '13:00'
+    - '14:00'
+    - '15:00'
+    - '16:00'
